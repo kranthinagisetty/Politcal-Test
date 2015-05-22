@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{130CDD6E-4359-4D5D-A425-08A091E2D122}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Server.PoliticalAppDataEntities</RootNamespace>
+    <AssemblyName>PoliticalAppDataEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Album.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentList.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentStatu.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Citizen.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CitizenMetaData.cs" />
+    <Compile Include="Complaint.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintStatu.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Constituency.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBack.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PartyWorker.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalAppModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoliticalAppModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PoliticalAppModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PoliticalParty.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Politician.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Speech.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Volunteer.cs">
+      <DependentUpon>PoliticalAppModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PoliticalAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PoliticalAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="PoliticalAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PoliticalAppModel.edmx</DependentUpon>
+      <LastGenOutput>PoliticalAppModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PoliticalAppModel.edmx.diagram">
+      <DependentUpon>PoliticalAppModel.edmx</DependentUpon>
+    </None>
+    <None Include="PoliticalAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PoliticalAppModel.edmx</DependentUpon>
+      <LastGenOutput>PoliticalAppModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DBSchema\Triggers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBSchema\StaticData\StaticData.sql" />
+    <Content Include="DBSchema\Tables\Appointment.sql" />
+    <Content Include="DBSchema\Tables\AppointmentStatus.sql" />
+    <Content Include="DBSchema\Tables\Citizen.sql" />
+    <Content Include="DBSchema\Tables\Complaint.sql" />
+    <Content Include="DBSchema\Tables\ComplaintStatus.sql" />
+    <Content Include="DBSchema\Tables\Constituency.sql" />
+    <Content Include="DBSchema\Tables\Event.sql" />
+    <Content Include="DBSchema\Tables\FeedBack.sql" />
+    <Content Include="DBSchema\Tables\PoliticalParty.sql" />
+    <Content Include="DBSchema\Tables\SingleScript.sql" />
+    <Content Include="DBSchema\Tables\Volunteer.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

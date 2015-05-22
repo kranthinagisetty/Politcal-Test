@@ -1,0 +1,14 @@
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\PoliticalAppRepository.dll.config
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\PoliticalAppRepository.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\PoliticalAppRepository.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\CommonUtilily.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\EntityFramework.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\CommonUtilily.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\PoliticalAppDataEntities.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\EntityFramework.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Release\PoliticalAppRepository.csprojResolveAssemblyReference.cache
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Release\PoliticalAppRepository.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Release\PoliticalAppRepository.pdb

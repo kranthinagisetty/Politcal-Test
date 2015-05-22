@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PoliticalAppModelStoreContainer" CdmEntityContainer="PoliticalAppDBContext">
+    <EntitySetMapping Name="Appointments">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Appointment">
+        <MappingFragment StoreEntitySet="Appointment">
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+          <ScalarProperty Name="AppointmentStatusID" ColumnName="AppointmentStatusID" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Complaint">
+        <MappingFragment StoreEntitySet="Complaint">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+          <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoliticalParties">
+      <EntityTypeMapping TypeName="PoliticalAppModel.PoliticalParty">
+        <MappingFragment StoreEntitySet="PoliticalParty">
+          <ScalarProperty Name="President" ColumnName="President" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="History" ColumnName="History" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FoundedOn" ColumnName="FoundedOn" />
+          <ScalarProperty Name="PartyName" ColumnName="PartyName" />
+          <ScalarProperty Name="PoliticalPartyID" ColumnName="PoliticalPartyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volunteers">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Volunteer">
+        <MappingFragment StoreEntitySet="Volunteer">
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+          <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Citizens">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Citizen">
+        <MappingFragment StoreEntitySet="Citizen">
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="CitizenType" ColumnName="CitizenType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+          <ScalarProperty Name="ConstituencyID" ColumnName="ConstituencyID" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppointmentLists">
+      <EntityTypeMapping TypeName="PoliticalAppModel.AppointmentList">
+        <MappingFragment StoreEntitySet="AppointmentList">
+          <ScalarProperty Name="AppointmentStatus" ColumnName="AppointmentStatus" />
+          <ScalarProperty Name="CitizenName" ColumnName="CitizenName" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppointmentStatus">
+      <EntityTypeMapping TypeName="PoliticalAppModel.AppointmentStatu">
+        <MappingFragment StoreEntitySet="AppointmentStatus">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="AppointmentStatus" ColumnName="AppointmentStatus" />
+          <ScalarProperty Name="AppointmentStatusID" ColumnName="AppointmentStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplaintStatus">
+      <EntityTypeMapping TypeName="PoliticalAppModel.ComplaintStatu">
+        <MappingFragment StoreEntitySet="ComplaintStatus">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="ComplaintStatus" ColumnName="ComplaintStatus" />
+          <ScalarProperty Name="ComplaintStatusID" ColumnName="ComplaintStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Politicians">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Politician">
+        <MappingFragment StoreEntitySet="Politician">
+          <ScalarProperty Name="PoliticanProfileUrl" ColumnName="PoliticanProfileUrl" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="PoliticianType" ColumnName="PoliticianType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MoblieNumber" ColumnName="MoblieNumber" />
+          <ScalarProperty Name="PoliticianName" ColumnName="PoliticianName" />
+          <ScalarProperty Name="ConstituencyID" ColumnName="ConstituencyID" />
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Gallery">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+          <ScalarProperty Name="AlbumDescription" ColumnName="AlbumDescription" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="AlbumLink" ColumnName="AlbumLink" />
+          <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+          <ScalarProperty Name="GalleryID" ColumnName="GalleryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Speeches">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Speech">
+        <MappingFragment StoreEntitySet="Speech">
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+          <ScalarProperty Name="SpeechLink" ColumnName="SpeechLink" />
+          <ScalarProperty Name="SpeechDescription" ColumnName="SpeechDescription" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SpeechName" ColumnName="SpeechName" />
+          <ScalarProperty Name="SpeechID" ColumnName="SpeechID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Constituencies">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Constituency">
+        <MappingFragment StoreEntitySet="Constituency">
+          <ScalarProperty Name="ConsituencyName" ColumnName="ConsituencyName" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="ConstituencyID" ColumnName="ConstituencyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBacks">
+      <EntityTypeMapping TypeName="PoliticalAppModel.FeedBack">
+        <MappingFragment StoreEntitySet="FeedBack">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+          <ScalarProperty Name="FeedBackID" ColumnName="FeedBackID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="AlbumName" ColumnName="AlbumName" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartyWorkers">
+      <EntityTypeMapping TypeName="PoliticalAppModel.PartyWorker">
+        <MappingFragment StoreEntitySet="PartyWorker">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+          <ScalarProperty Name="CitizenID" ColumnName="CitizenID" />
+          <ScalarProperty Name="PartyWokerID" ColumnName="PartyWokerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="PoliticalAppModel.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Agenda" ColumnName="Agenda" />
+          <ScalarProperty Name="EventEndDate" ColumnName="EventEndDate" />
+          <ScalarProperty Name="EventBeginDate" ColumnName="EventBeginDate" />
+          <ScalarProperty Name="EventLocation" ColumnName="EventLocation" />
+          <ScalarProperty Name="PoliticianID" ColumnName="PoliticianID" />
+          <ScalarProperty Name="PoliticalPartyID" ColumnName="PoliticalPartyID" />
+          <ScalarProperty Name="EventName" ColumnName="EventName" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

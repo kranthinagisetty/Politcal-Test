@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ea16353a7a742e080ddb8bbd2b151f9" Name="Diagram1" ZoomLevel="76">
+        <EntityTypeShape EntityType="PoliticalAppModel.Appointment" Width="1.5" PointX="3.375" PointY="0.875" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Complaint" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.PoliticalParty" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Volunteer" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Citizen" Width="1.5" PointX="1.125" PointY="1" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Appintment_CitizenID" />
+        <EntityTypeShape EntityType="PoliticalAppModel.AppointmentList" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.AppointmentStatu" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.ComplaintStatu" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Politician" Width="1.5" PointX="7.625" PointY="10.125" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Citizen_Volunteer" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Gallery" Width="1.5" PointX="9.875" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Speech" Width="1.5" PointX="9.875" PointY="11" />
+        <AssociationConnector Association="PoliticalAppModel.MyForeignKey" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_Speech" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Constituency" Width="1.5" PointX="0.75" PointY="6.75" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Constituency_Citizen" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_Constituency" />
+        <EntityTypeShape EntityType="PoliticalAppModel.FeedBack" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Album" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="PoliticalAppModel.Event" Width="1.5" PointX="14" PointY="6" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_Appointment" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Event_Volunteer" />
+        <AssociationConnector Association="PoliticalAppModel.FK_PoliticalParty_Event" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_Event" />
+        <EntityTypeShape EntityType="PoliticalAppModel.PartyWorker" Width="1.5" PointX="12.875" PointY="1.125" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_Citizen" />
+        <AssociationConnector Association="PoliticalAppModel.FK_Politician_PartyWorker" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

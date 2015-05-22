@@ -1,0 +1,9 @@
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\PoliticalAppDataEntities.dll.config
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\PoliticalAppDataEntities.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\EntityFramework.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\EntityFramework.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\obj\Debug\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\obj\Debug\PoliticalAppDataEntities.pdb

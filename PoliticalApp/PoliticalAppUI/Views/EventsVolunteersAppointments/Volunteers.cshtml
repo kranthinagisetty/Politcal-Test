@@ -1,0 +1,103 @@
+﻿@model VolunteerModel
+
+@{
+    ViewBag.Title = "Volunteers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+
+
+
+<h2>Volunteers</h2>
+
+
+<div class="container">
+    <div class="wrapper">
+        <h2><i class="fa fa-comments"></i> Volunteers<span class="right-sitemap">Your are here: <a href="index.html">Dashboard</a> <i class="fa fa-chevron-right"></i> <span>Volunteers</span></span></h2>
+        <section class="topmargin10 section-col section-fw">
+            <div>
+
+
+
+                <div id="tab-container" class='tab-container'>
+                    <ul class='etabs'>
+                        <li class='tab'><a href="#tabs1-Audio">Volunteers</a></li>
+                        <li class='tab'><a href="#tabs1-Video">Volunteer Request</a></li>
+                    </ul>
+                    <div class="gr-action">
+                        <button class="btn-red">Delete</button>
+                    </div>
+                    <div class="clr"></div>
+                    <div class='panel-container'>
+
+                        @Html.Partial("VolunteerPartialList", Model)
+                        @Html.Partial("VolunteerPartialRequest", Model)
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="clr"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tab-container').easytabs();
+    });
+
+
+
+    function ChangeUrl(page, url) {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Page: page, Url: url };
+            history.pushState(obj, obj.Page, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+
+
+    $(function () {
+
+        $('body').on('click', '#tabs1-Audio .pagination a', function (event) {
+            event.preventDefault();
+            console.log('page');
+
+
+            var url = $(this).attr('href');
+            console.log(url);
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    ChangeUrl('index', url);
+                    $('#tabs1-Audio').html(result);
+                }
+            });
+        });
+
+        $('body').on('click', '#tabs1-Video .pagination a', function (event) {
+            event.preventDefault();
+            console.log('page');
+
+            var url = $(this).attr('href');
+
+            console.log(url);
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    ChangeUrl('index', url);
+                    $('#tabs1-Video').html(result);
+                }
+            });
+        });
+    });
+
+</script>

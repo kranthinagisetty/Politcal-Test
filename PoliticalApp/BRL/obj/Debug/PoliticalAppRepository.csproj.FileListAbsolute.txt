@@ -1,0 +1,14 @@
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\PoliticalAppRepository.dll.config
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\PoliticalAppRepository.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\PoliticalAppRepository.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\CommonUtilily.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\EntityFramework.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\CommonUtilily.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\PoliticalAppDataEntities.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\EntityFramework.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Debug\PoliticalAppRepository.csprojResolveAssemblyReference.cache
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Debug\PoliticalAppRepository.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\BRL\obj\Debug\PoliticalAppRepository.pdb

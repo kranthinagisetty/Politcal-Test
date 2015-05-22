@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Political App CMS</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <link type="text/css" href="/Content/PagedList.css" rel="stylesheet" />
+
+
+    <link type="text/css" rel="stylesheet" href="/Content/style.css">
+    <link type="text/css" rel="stylesheet" href="/Content/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/script.js"></script>
+    <script src="/Scripts/jquery.hashchange.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.easytabs.min.js" type="text/javascript"></script>
+    @*<script src="/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>*@
+
+</head>
+
+
+<body>
+    <div id="menu-toggle">
+        <img src="/Images/menu.png" width=20 height=20 alt="Menu" class="toggle-on" />
+        <img src="/Images/current-arrow.png" alt="Menu" class="toggle-off" />
+        <span>Menu</span>
+    </div>
+
+    <nav id="menu">
+
+        <a href='@Url.Action(    "Dashboard",       "Citizen")                   ' class="dashboard current">Dashboard</a>
+        <a href='@Url.Action(    "Index",          "Citizen")                   ' class="flag">Citizen Data</a>
+        <a href='@Url.Action(    "Index",         "SpeechesGallery")                   ' class="speech">Speeches</a>
+        <a href='@Url.Action(    "Index",         "ComplaintsFeedback")                ' class="complaints">Complaint &amp; Feedbacks</a>
+        <a href='@Url.Action(    "Appointments",  "EventsVolunteersAppointments")      ' class="appointments">Appointments</a>
+        <a href='@Url.Action("Index",                    "Conference")                           ' class="conference">Conference</a>
+        <a href='@Url.Action(    "Volunteers",    "EventsVolunteersAppointments")      ' class="volunteers">Manage Volunteers</a>
+        <a href='@Url.Action(    "Index",         "EventsVolunteersAppointments")      ' class="events">Events</a>
+        <a href='@Url.Action(    "Gallery",       "SpeechesGallery")                   ' class="gallery">Gallery</a>
+        <a href='@Url.Action(    "Profiles",        "SettingsProfiles")                   ' class="user">Profile Updates</a>
+        <a href='@Url.Action(    "Index",           "SettingsProfiles")                   ' class="user">Settings</a>
+
+
+    </nav>
+
+    <header class="topheader">
+        <a href="index.html"><img src="~/Images/logo.png" alt="party-logo" /></a>
+        <div class="headerlinks"><i class="fa fa-user"></i><a href="#">@ViewBag.UserName !</a> | <a href='@Url.Action("Index", "Login")'>Logout</a></div>
+    </header>
+    <div class="container">
+
+        <div class="wrapper dashboard">
+            @RenderBody()
+
+        </div>
+    </div>
+    <footer>&#169; 2015. All rights reseved by <a href="http://www.ascendiatech.in" target="_blank"> ascendiatech.in</a></footer>
+</body>
+
+</html>

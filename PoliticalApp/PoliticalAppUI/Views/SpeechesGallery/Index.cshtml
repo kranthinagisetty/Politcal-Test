@@ -1,0 +1,136 @@
+﻿@model AudioVideoModel
+
+@{
+    ViewBag.Title = "Speeches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2>Speeches</h2>
+
+
+<div class="container">
+
+    <div class="wrapper">
+        <h2><span class="header-icon"><img src="images/icon-speech.png" width="19" height="21" alt="" /></span> Speeches<span class="right-sitemap">Your are here: <a href="index.html">Dashboard</a> | <span>Speeches</span></span></h2>
+        <section class="topmargin10 section-col">
+            <div>
+
+                <div id="tab-container" class='tab-container'>
+                    <ul class='etabs'>
+                        <li class='tab'><a href="#tabs1-Audio">Audio's</a></li>
+                        <li class='tab'><a href="#tabs1-Video">Video's</a></li>
+                    </ul>
+                    <div class="gr-action">
+                        <a href="preview2.html" class="btn-sm">Edit</a>
+                        <button class="btn-red">Delete</button>
+                    </div>
+                    <div class="clr"></div>
+
+                    <div class='panel-container'>
+                        @Html.Partial("SpeechesAudioList", Model)  
+                        @Html.Partial("SpeechesVideoList", Model)
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        @using (Html.BeginForm("UploadVideoAudio", "SpeechesGallery", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <section class="topmargin10 section-col form-section">
+                <div class="section-header">
+                    <h3>Add Speech</h3>
+                    <div class="clr"></div>
+                </div>
+                <div class="fancy_fields form-container">
+                    <div class="col-half">
+                        <select>
+                            <option value="1">Video</option>
+                            <option value="0">Audio</option>
+                        </select>
+                    </div>
+                    <div class="col-half">
+                        <input type="text" id="datepickerSpeechq" name="date" placeholder="dd/mm/yyy"><br>
+                        <input type="text" id="datepickerSpeech" />
+                    </div>
+                    <div class="clr"></div>
+                    <input type="text" name="speechName" placeholder="Speech Name">
+                    <input type="text" name="place" placeholder="Place">
+
+                    <input type="text" name="url" placeholder="Add Youtube URl" class="txt-url"> or
+                    <input id="file" type="file" name="File" class="btn-red">
+                    <textarea placeholder="Speech Details" name="speechdetails"></textarea>
+                    <div class="topmargin30">
+                        <button class="btn-white">Clear</button>
+                        <button id="submit" type="submit" name="FilePath" class="marginleft20">Submit</button>
+
+                    </div>
+                </div>
+            </section>
+        }
+        <div class="clr"></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tab-container').easytabs();
+    });
+
+    function ChangeUrl(page, url) {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Page: page, Url: url };
+            history.pushState(obj, obj.Page, obj.Url);
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+
+
+    $(function () {
+
+        $('body').on('click', '#tabs1-Audio .pagination a', function (event) {
+            event.preventDefault();
+            console.log('page');
+           
+           
+            var url = $(this).attr('href') ;
+            console.log(url);
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    ChangeUrl('index', url);
+                    $('#tabs1-Audio').html(result);
+                }
+            });
+        });
+
+        $('body').on('click', '#tabs1-Video .pagination a', function (event) {
+            event.preventDefault();
+            console.log('page');
+
+            var url = $(this).attr('href');
+
+            console.log(url);
+            $.ajax({
+                url: url,
+                success: function (result) {
+                    ChangeUrl('index', url);
+                    $('#tabs1-Video').html(result);
+                }
+            });
+        });
+    });
+
+</script>
+
+
+
+
+
+

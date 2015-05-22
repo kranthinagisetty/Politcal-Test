@@ -1,0 +1,52 @@
+﻿
+@model AudioVideoModel
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+
+
+<div id="tabs1-Audio">
+    <div class="grid-container">
+
+        <div id="movie_grid">
+            <ul class=" gr-header">
+                <li><input type="checkbox"></li>
+                <li class="name"><i class="fa fa-user"></i> Name</li>
+                <li class="place"><i class="fa fa-map-marker"></i> Place</li>
+                <li class="date"><i class="fa fa-calendar"></i> Date</li>
+                <li class="play"><i class="fa fa-play-circle"></i> Play</li>
+            </ul>
+
+            @foreach (Speech p in Model.audioList)
+            {
+                <ul class="gr-content-row">
+                    <li><input type="checkbox"></li>
+                    <li class="name"> @p.SpeechName</li>
+                    <li class="place">@p.Place</li>
+                    <li class="date">@p.CreatedDate</li>
+                    <li class="play">
+                        <i class="fa fa-play-circle"></i>
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberAudio of @ViewBag.AudioTotalPages  </li>
+        </ul>
+
+        <div class="clr"></div>
+
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.audioList, page => Url.Action("Index", new { page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>

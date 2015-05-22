@@ -1,0 +1,7 @@
+CREATE TABLE [Constituency]
+(
+	[ConstituencyID] INT IDENTITY(1, 1) PRIMARY KEY,
+	[Name] DATETIME NOT NULL DEFAULT(GETDATE()),
+	[AddedOn] DATETIME,
+	[UpdatedOn] DATETIME
+)

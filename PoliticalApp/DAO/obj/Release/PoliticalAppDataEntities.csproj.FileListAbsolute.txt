@@ -1,0 +1,10 @@
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\PoliticalAppDataEntities.dll.config
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\PoliticalAppDataEntities.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\EntityFramework.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\EntityFramework.SqlServer.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\EntityFramework.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\bin\Release\EntityFramework.SqlServer.xml
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\obj\Release\PoliticalAppDataEntities.csprojResolveAssemblyReference.cache
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\obj\Release\PoliticalAppDataEntities.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\DAO\obj\Release\PoliticalAppDataEntities.pdb

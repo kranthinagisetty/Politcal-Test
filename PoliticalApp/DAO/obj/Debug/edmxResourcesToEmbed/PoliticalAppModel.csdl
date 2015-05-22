@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PoliticalAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PoliticalAppDBContext" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="Appointments" EntityType="PoliticalAppModel.Appointment" />
+    <EntitySet Name="Complaints" EntityType="PoliticalAppModel.Complaint" />
+    <EntitySet Name="PoliticalParties" EntityType="PoliticalAppModel.PoliticalParty" />
+    <EntitySet Name="Volunteers" EntityType="PoliticalAppModel.Volunteer" />
+    <EntitySet Name="Citizens" EntityType="PoliticalAppModel.Citizen" />
+    <AssociationSet Name="FK_Appintment_CitizenID" Association="PoliticalAppModel.FK_Appintment_CitizenID">
+      <End Role="Citizen" EntitySet="Citizens" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <EntitySet Name="AppointmentLists" EntityType="PoliticalAppModel.AppointmentList" />
+    <EntitySet Name="AppointmentStatus" EntityType="PoliticalAppModel.AppointmentStatu" />
+    <EntitySet Name="ComplaintStatus" EntityType="PoliticalAppModel.ComplaintStatu" />
+    <EntitySet Name="Politicians" EntityType="PoliticalAppModel.Politician" />
+    <AssociationSet Name="FK_Citizen_Volunteer" Association="PoliticalAppModel.FK_Citizen_Volunteer">
+      <End Role="Citizen" EntitySet="Citizens" />
+      <End Role="Volunteer" EntitySet="Volunteers" />
+    </AssociationSet>
+    <EntitySet Name="Galleries" EntityType="PoliticalAppModel.Gallery" />
+    <EntitySet Name="Speeches" EntityType="PoliticalAppModel.Speech" />
+    <AssociationSet Name="MyForeignKey" Association="PoliticalAppModel.MyForeignKey">
+      <End Role="Politician" EntitySet="Politicians" />
+      <End Role="Gallery" EntitySet="Galleries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politician_Speech" Association="PoliticalAppModel.FK_Politician_Speech">
+      <End Role="Politician" EntitySet="Politicians" />
+      <End Role="Speech" EntitySet="Speeches" />
+    </AssociationSet>
+    <EntitySet Name="Constituencies" EntityType="PoliticalAppModel.Constituency" />
+    <AssociationSet Name="FK_Constituency_Citizen" Association="PoliticalAppModel.FK_Constituency_Citizen">
+      <End Role="Constituency" EntitySet="Constituencies" />
+      <End Role="Citizen" EntitySet="Citizens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politician_Constituency" Association="PoliticalAppModel.FK_Politician_Constituency">
+      <End Role="Constituency" EntitySet="Constituencies" />
+      <End Role="Politician" EntitySet="Politicians" />
+    </AssociationSet>
+    <EntitySet Name="FeedBacks" EntityType="PoliticalAppModel.FeedBack" />
+    <EntitySet Name="Albums" EntityType="PoliticalAppModel.Album" />
+    <EntitySet Name="Events" EntityType="PoliticalAppModel.Event" />
+    <AssociationSet Name="FK_Politician_Appointment" Association="PoliticalAppModel.FK_Politician_Appointment">
+      <End Role="Politician" EntitySet="Politicians" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Volunteer" Association="PoliticalAppModel.FK_Event_Volunteer">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Volunteer" EntitySet="Volunteers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoliticalParty_Event" Association="PoliticalAppModel.FK_PoliticalParty_Event">
+      <End Role="PoliticalParty" EntitySet="PoliticalParties" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politician_Event" Association="PoliticalAppModel.FK_Politician_Event">
+      <End Role="Politician" EntitySet="Politicians" />
+      <End Role="Event" EntitySet="Events" />
+    </AssociationSet>
+    <EntitySet Name="PartyWorkers" EntityType="PoliticalAppModel.PartyWorker" />
+    <AssociationSet Name="FK_Politician_Citizen" Association="PoliticalAppModel.FK_Politician_Citizen">
+      <End Role="Citizen" EntitySet="Citizens" />
+      <End Role="PartyWorker" EntitySet="PartyWorkers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politician_PartyWorker" Association="PoliticalAppModel.FK_Politician_PartyWorker">
+      <End Role="Politician" EntitySet="Politicians" />
+      <End Role="PartyWorker" EntitySet="PartyWorkers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CitizenID" Type="Int32" Nullable="false" />
+    <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Citizen" Relationship="PoliticalAppModel.FK_Appintment_CitizenID" FromRole="Appointment" ToRole="Citizen" />
+    <Property Name="AppointmentStatusID" Type="Byte" Nullable="false" />
+    <Property Name="PoliticianID" Type="Int32" />
+    <NavigationProperty Name="Politician" Relationship="PoliticalAppModel.FK_Politician_Appointment" FromRole="Appointment" ToRole="Politician" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="ComplaintID" />
+    </Key>
+    <Property Name="ComplaintID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CitizenID" Type="Int32" Nullable="false" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PoliticalParty">
+    <Key>
+      <PropertyRef Name="PoliticalPartyID" />
+    </Key>
+    <Property Name="PoliticalPartyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PartyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FoundedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="History" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="President" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Events" Relationship="PoliticalAppModel.FK_PoliticalParty_Event" FromRole="PoliticalParty" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="Volunteer">
+    <Key>
+      <PropertyRef Name="VolunteerID" />
+    </Key>
+    <Property Name="VolunteerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CitizenID" Type="Int32" Nullable="false" />
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Citizen" Relationship="PoliticalAppModel.FK_Citizen_Volunteer" FromRole="Volunteer" ToRole="Citizen" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="TaskStatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Event" Relationship="PoliticalAppModel.FK_Event_Volunteer" FromRole="Volunteer" ToRole="Event" />
+  </EntityType>
+  <EntityType Name="Citizen">
+    <Key>
+      <PropertyRef Name="CitizenID" />
+    </Key>
+    <Property Name="CitizenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConstituencyID" Type="Int32" Nullable="false" />
+    <Property Name="CitizenName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="Byte" Nullable="false" />
+    <Property Name="Age" Type="Byte" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CitizenType" Type="Byte" Nullable="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Appointments" Relationship="PoliticalAppModel.FK_Appintment_CitizenID" FromRole="Citizen" ToRole="Appointment" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Volunteers" Relationship="PoliticalAppModel.FK_Citizen_Volunteer" FromRole="Citizen" ToRole="Volunteer" />
+    <NavigationProperty Name="Constituency" Relationship="PoliticalAppModel.FK_Constituency_Citizen" FromRole="Citizen" ToRole="Constituency" />
+    <NavigationProperty Name="PartyWorkers" Relationship="PoliticalAppModel.FK_Politician_Citizen" FromRole="Citizen" ToRole="PartyWorker" />
+  </EntityType>
+  <Association Name="FK_Appintment_CitizenID">
+    <End Type="PoliticalAppModel.Citizen" Role="Citizen" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen">
+        <PropertyRef Name="CitizenID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="CitizenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AppointmentList">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+      <PropertyRef Name="AppointmentDate" />
+      <PropertyRef Name="CitizenName" />
+      <PropertyRef Name="AppointmentStatus" />
+    </Key>
+    <Property Name="AppointmentID" Type="Int32" Nullable="false" />
+    <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CitizenName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AppointmentStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AppointmentStatu">
+    <Key>
+      <PropertyRef Name="AppointmentStatusID" />
+    </Key>
+    <Property Name="AppointmentStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AppointmentStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ComplaintStatu">
+    <Key>
+      <PropertyRef Name="ComplaintStatusID" />
+    </Key>
+    <Property Name="ComplaintStatusID" Type="Int32" Nullable="false" />
+    <Property Name="ComplaintStatus" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Politician">
+    <Key>
+      <PropertyRef Name="PoliticianID" />
+    </Key>
+    <Property Name="PoliticianID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConstituencyID" Type="Int32" />
+    <Property Name="PoliticianName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MoblieNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Byte" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PoliticianType" Type="Byte" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Galleries" Relationship="PoliticalAppModel.MyForeignKey" FromRole="Politician" ToRole="Gallery" />
+    <NavigationProperty Name="Speeches" Relationship="PoliticalAppModel.FK_Politician_Speech" FromRole="Politician" ToRole="Speech" />
+    <Property Name="PoliticanProfileUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Constituency" Relationship="PoliticalAppModel.FK_Politician_Constituency" FromRole="Politician" ToRole="Constituency" />
+    <NavigationProperty Name="Appointments" Relationship="PoliticalAppModel.FK_Politician_Appointment" FromRole="Politician" ToRole="Appointment" />
+    <NavigationProperty Name="Events" Relationship="PoliticalAppModel.FK_Politician_Event" FromRole="Politician" ToRole="Event" />
+    <NavigationProperty Name="PartyWorkers" Relationship="PoliticalAppModel.FK_Politician_PartyWorker" FromRole="Politician" ToRole="PartyWorker" />
+  </EntityType>
+  <Association Name="FK_Citizen_Volunteer">
+    <End Type="PoliticalAppModel.Citizen" Role="Citizen" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Volunteer" Role="Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen">
+        <PropertyRef Name="CitizenID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="CitizenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="GalleryID" />
+    </Key>
+    <Property Name="GalleryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PoliticianID" Type="Int32" />
+    <Property Name="AlbumName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlbumLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsVideo" Type="Boolean" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlbumDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Politician" Relationship="PoliticalAppModel.MyForeignKey" FromRole="Gallery" ToRole="Politician" />
+    <Property Name="AlbumId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Speech">
+    <Key>
+      <PropertyRef Name="SpeechID" />
+    </Key>
+    <Property Name="SpeechID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SpeechName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SpeechDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpeechLink" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsVideo" Type="Boolean" Nullable="false" />
+    <Property Name="Place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PoliticianID" Type="Int32" />
+    <NavigationProperty Name="Politician" Relationship="PoliticalAppModel.FK_Politician_Speech" FromRole="Speech" ToRole="Politician" />
+  </EntityType>
+  <Association Name="MyForeignKey">
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PoliticalAppModel.Gallery" Role="Gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politician">
+        <PropertyRef Name="PoliticianID" />
+      </Principal>
+      <Dependent Role="Gallery">
+        <PropertyRef Name="PoliticianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politician_Speech">
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="0..1" />
+    <End Type="PoliticalAppModel.Speech" Role="Speech" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politician">
+        <PropertyRef Name="PoliticianID" />
+      </Principal>
+      <Dependent Role="Speech">
+        <PropertyRef Name="PoliticianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Constituency">
+    <Key>
+      <PropertyRef Name="ConstituencyID" />
+    </Key>
+    <Property Name="ConstituencyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="ConsituencyName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Citizens" Relationship="PoliticalAppModel.FK_Constituency_Citizen" FromRole="Constituency" ToRole="Citizen" />
+    <NavigationProperty Name="Politicians" Relationship="PoliticalAppModel.FK_Politician_Constituency" FromRole="Constituency" ToRole="Politician" />
+  </EntityType>
+  <Association Name="FK_Constituency_Citizen">
+    <End Type="PoliticalAppModel.Constituency" Role="Constituency" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Citizen" Role="Citizen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Constituency">
+        <PropertyRef Name="ConstituencyID" />
+      </Principal>
+      <Dependent Role="Citizen">
+        <PropertyRef Name="ConstituencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politician_Constituency">
+    <End Type="PoliticalAppModel.Constituency" Role="Constituency" Multiplicity="0..1" />
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Constituency">
+        <PropertyRef Name="ConstituencyID" />
+      </Principal>
+      <Dependent Role="Politician">
+        <PropertyRef Name="ConstituencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FeedBack">
+    <Key>
+      <PropertyRef Name="FeedBackID" />
+    </Key>
+    <Property Name="FeedBackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CitizenID" Type="Int32" Nullable="false" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="AlbumId" />
+    </Key>
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+    <Property Name="AlbumName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PoliticalPartyID" Type="Int32" Nullable="false" />
+    <Property Name="PoliticianID" Type="Int32" Nullable="false" />
+    <Property Name="EventLocation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EventBeginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EventEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Agenda" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Volunteers" Relationship="PoliticalAppModel.FK_Event_Volunteer" FromRole="Event" ToRole="Volunteer" />
+    <NavigationProperty Name="PoliticalParty" Relationship="PoliticalAppModel.FK_PoliticalParty_Event" FromRole="Event" ToRole="PoliticalParty" />
+    <NavigationProperty Name="Politician" Relationship="PoliticalAppModel.FK_Politician_Event" FromRole="Event" ToRole="Politician" />
+  </EntityType>
+  <Association Name="FK_Politician_Appointment">
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="0..1" />
+    <End Type="PoliticalAppModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politician">
+        <PropertyRef Name="PoliticianID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="PoliticianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Volunteer">
+    <End Type="PoliticalAppModel.Event" Role="Event" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Volunteer" Role="Volunteer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="Volunteer">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PoliticalParty_Event">
+    <End Type="PoliticalAppModel.PoliticalParty" Role="PoliticalParty" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PoliticalParty">
+        <PropertyRef Name="PoliticalPartyID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="PoliticalPartyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politician_Event">
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="1" />
+    <End Type="PoliticalAppModel.Event" Role="Event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politician">
+        <PropertyRef Name="PoliticianID" />
+      </Principal>
+      <Dependent Role="Event">
+        <PropertyRef Name="PoliticianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PartyWorker">
+    <Key>
+      <PropertyRef Name="PartyWokerID" />
+    </Key>
+    <Property Name="PartyWokerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CitizenID" Type="Int32" Nullable="false" />
+    <Property Name="PoliticianID" Type="Int32" Nullable="false" />
+    <Property Name="EventID" Type="Int16" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="AddedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Repassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Citizen" Relationship="PoliticalAppModel.FK_Politician_Citizen" FromRole="PartyWorker" ToRole="Citizen" />
+    <NavigationProperty Name="Politician" Relationship="PoliticalAppModel.FK_Politician_PartyWorker" FromRole="PartyWorker" ToRole="Politician" />
+  </EntityType>
+  <Association Name="FK_Politician_Citizen">
+    <End Type="PoliticalAppModel.Citizen" Role="Citizen" Multiplicity="1" />
+    <End Type="PoliticalAppModel.PartyWorker" Role="PartyWorker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Citizen">
+        <PropertyRef Name="CitizenID" />
+      </Principal>
+      <Dependent Role="PartyWorker">
+        <PropertyRef Name="CitizenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politician_PartyWorker">
+    <End Type="PoliticalAppModel.Politician" Role="Politician" Multiplicity="1" />
+    <End Type="PoliticalAppModel.PartyWorker" Role="PartyWorker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politician">
+        <PropertyRef Name="PoliticianID" />
+      </Principal>
+      <Dependent Role="PartyWorker">
+        <PropertyRef Name="PoliticianID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

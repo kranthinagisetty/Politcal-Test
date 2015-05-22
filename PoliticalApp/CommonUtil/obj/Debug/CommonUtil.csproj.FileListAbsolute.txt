@@ -1,0 +1,10 @@
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\CommonUtilily.dll.config
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\CommonUtilily.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\CommonUtilily.pdb
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\obj\Debug\CommonUtilily.dll
+D:\Work\PoliticalAppApril21\PoliticalApp\CommonUtil\obj\Debug\CommonUtilily.pdb

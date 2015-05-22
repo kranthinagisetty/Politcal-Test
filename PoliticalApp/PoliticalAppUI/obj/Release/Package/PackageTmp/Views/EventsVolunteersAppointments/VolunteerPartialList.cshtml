@@ -1,0 +1,49 @@
+﻿@model VolunteerModel
+
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+<div id="tabs1-Audio">
+    <div class="grid-container gr-volunteers">
+        <ul class="gr-header">
+            <li><input type="checkbox"></li>
+            <li class="name"><i class="fa fa-user"></i> Name</li>
+            <li class="place"><i class="fa fa-map-marker"></i> Location</li>
+            <li class="email"><i class="fa fa-envelope"></i> Email</li>
+            <li class="phone"><i class="fa fa-phone"></i> Phone</li>
+            <li class="taskassign"><i class="fa fa-tasks"></i> Assign a Task</li>
+        </ul>
+
+
+
+
+
+        @foreach (Volunteer p in Model.VolunteersList)
+        {
+            <ul class="gr-content-row">
+                <li><input type="checkbox"></li>
+                <li class="name">Jennifer @p.CitizenID</li>
+                <li class="place">Hyderabad @p.EventID</li>
+                <li class="email">mail.Jennifer@gmail.com</li>
+                <li class="phone">012345678</li>
+                <li class="taskassign"><button>Assign a task</button></li>
+            </ul>
+        }
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberAudio of @ViewBag.VolunteerListTotalPages  </li>
+        </ul>
+
+        <div class="clr"></div>
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.VolunteersList, page => Url.Action("Volunteers", new { page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+
+            </ul>
+        </div>
+    </div>
+
+</div>

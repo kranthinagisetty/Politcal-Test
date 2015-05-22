@@ -1,0 +1,47 @@
+﻿
+
+
+@model AppointmentsModel
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+<div id="tabs1-Audio">
+    <div class="grid-container">
+        <ul class="gr-header">
+            <li><input type="checkbox"></li>
+            <li class="name"><i class="fa fa-user"></i> Name</li>
+            <li class="place"><i class="fa fa-file-text-o"></i> Subject</li>
+            <li class="date"><i class="fa fa-calendar"></i> Date &amp; Time</li>
+            <li class="play"><i class="fa fa-pencil-square-o"></i> Reschedule</li>
+        </ul>
+        
+        @foreach (Appointment p in Model.appointmentList)
+        {
+            <ul class="gr-content-row">
+                <li><input type="checkbox"></li>
+                <li class="name"> @p.CitizenID</li>
+                <li class="place">@p.Message</li>
+                <li class="date">@p.AppointmentDate</li>
+                <li class="play">
+                    <button>Reschedule</button>
+                </li>
+            </ul>
+        }
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberAudio of @ViewBag.AppointmentsTotalPages  </li>
+        </ul>
+
+        <div class="clr"></div>
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.appointmentList, page => Url.Action("Appointments", new { page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+
+            </ul>
+        </div>
+    </div>
+
+</div>

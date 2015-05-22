@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{D317FF43-8605-4EDB-975A-0CB5F29B153B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{CFDFB3FA-9AA4-45FD-A543-E93083854F33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{7D0DA703-B808-4BFC-8F32-656487C163F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliticalAppRepository", "BRL\PoliticalAppRepository.csproj", "{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{63244FB1-B5CB-4AFC-B2E7-B1BC7217BA98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtil", "CommonUtil\CommonUtil.csproj", "{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliticalAppDataEntities", "DAO\PoliticalAppDataEntities.csproj", "{130CDD6E-4359-4D5D-A425-08A091E2D122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliticalAppServiceAPI", "PoliticalAppServiceAPI\PoliticalAppServiceAPI.csproj", "{15C4FC81-FAF9-445C-964A-E80170FCC75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoliticalAppUI", "PoliticalAppUI\PoliticalAppUI.csproj", "{D77663A8-985D-4AD7-97A6-7F3277A955E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130CDD6E-4359-4D5D-A425-08A091E2D122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130CDD6E-4359-4D5D-A425-08A091E2D122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130CDD6E-4359-4D5D-A425-08A091E2D122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130CDD6E-4359-4D5D-A425-08A091E2D122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C4FC81-FAF9-445C-964A-E80170FCC75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C4FC81-FAF9-445C-964A-E80170FCC75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C4FC81-FAF9-445C-964A-E80170FCC75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C4FC81-FAF9-445C-964A-E80170FCC75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77663A8-985D-4AD7-97A6-7F3277A955E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77663A8-985D-4AD7-97A6-7F3277A955E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77663A8-985D-4AD7-97A6-7F3277A955E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77663A8-985D-4AD7-97A6-7F3277A955E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA0FBBF9-E5CA-4E5D-BE3B-8774C0A45EA7} = {7D0DA703-B808-4BFC-8F32-656487C163F6}
+		{2598E63C-2CDF-4AC4-8125-836DEE14A1C1} = {63244FB1-B5CB-4AFC-B2E7-B1BC7217BA98}
+		{130CDD6E-4359-4D5D-A425-08A091E2D122} = {7D0DA703-B808-4BFC-8F32-656487C163F6}
+		{15C4FC81-FAF9-445C-964A-E80170FCC75D} = {D317FF43-8605-4EDB-975A-0CB5F29B153B}
+		{D77663A8-985D-4AD7-97A6-7F3277A955E1} = {CFDFB3FA-9AA4-45FD-A543-E93083854F33}
+	EndGlobalSection
+EndGlobal

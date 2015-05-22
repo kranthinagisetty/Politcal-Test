@@ -1,0 +1,15 @@
+CREATE TABLE [Citizen]
+(
+	[CitizenID] INT IDENTITY(1, 1) PRIMARY KEY,
+	[ConstituencyID] INT NOT NULL,
+	[CitizenName] VARCHAR(100) NOT NULL,
+	[MobileNumber] VARCHAR(15) NOT NULL,
+	[Email] VARCHAR (250) NOT NULL,
+	[Gender] TINYINT NOT NULL,
+	[Age] TINYINT NOT NULL,
+	[Address] VARCHAR(500) NOT NULL,
+	[Description] VARCHAR(500) NOT NULL,
+	[CitizenType] TINYINT NOT NULL,
+	[AddedOn] DATETIME,
+	[UpdatedOn] DATETIME
+)

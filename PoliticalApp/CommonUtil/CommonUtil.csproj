@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2598E63C-2CDF-4AC4-8125-836DEE14A1C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonUtilily</RootNamespace>
+    <AssemblyName>CommonUtilily</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CommonConstants.cs" />
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Constants\SortingExtension.cs" />
+    <Compile Include="Exceptions\CustomException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Lib\CommonServiceLocator.1.0\CommonServiceLocator.1.0.nupkg" />
+    <None Include="Lib\Unity.3.0.1304.1\lib\NetCore45\Microsoft.Practices.Unity.NetCore.pri" />
+    <None Include="Lib\Unity.3.0.1304.1\tools\install.ps1" />
+    <None Include="Lib\Unity.3.0.1304.1\Unity.3.0.1304.1.nupkg" />
+    <None Include="Lib\Unity.3.0.1304.1\UnityConfiguration30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Lib\Unity.Mvc4.1.4.0.0\content\Bootstrapper.cs.pp" />
+    <None Include="Lib\Unity.Mvc4.1.4.0.0\Unity.Mvc4.1.4.0.0.nupkg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Lib\Antlr3.Runtime.dll" />
+    <Content Include="Lib\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Lib\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.pdb" />
+    <Content Include="Lib\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.XML" />
+    <Content Include="Lib\CommonServiceLocator.1.0\lib\SL30\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Lib\CommonServiceLocator.1.0\lib\SL30\Microsoft.Practices.ServiceLocation.XML" />
+    <Content Include="Lib\EntityFramework.dll" />
+    <Content Include="Lib\EntityFramework.SqlServer.dll" />
+    <Content Include="Lib\Google.GData.Client.DLL" />
+    <Content Include="Lib\Google.GData.Extensions.dll" />
+    <Content Include="Lib\Google.GData.YouTube.dll" />
+    <Content Include="Lib\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.Interception.Configuration.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Lib\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="Lib\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
+    <Content Include="Lib\NReco.VideoConverter.dll" />
+    <Content Include="Lib\System.Net.Http.dll" />
+    <Content Include="Lib\System.Net.Http.WebRequest.dll" />
+    <Content Include="Lib\System.Web.Helpers.dll" />
+    <Content Include="Lib\System.Web.Http.dll" />
+    <Content Include="Lib\System.Web.Http.WebHost.dll" />
+    <Content Include="Lib\System.Web.Mvc.dll" />
+    <Content Include="Lib\System.Web.Optimization.dll" />
+    <Content Include="Lib\System.Web.Providers.dll" />
+    <Content Include="Lib\System.Web.Razor.dll" />
+    <Content Include="Lib\System.Web.WebPages.Deployment.dll" />
+    <Content Include="Lib\System.Web.WebPages.dll" />
+    <Content Include="Lib\System.Web.WebPages.Razor.dll" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.xml" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.xml" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\NetCore45\Microsoft.Practices.Unity.NetCore.dll" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\NetCore45\Microsoft.Practices.Unity.NetCore.xml" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\wp8\Microsoft.Practices.Unity.WindowsPhone.dll" />
+    <Content Include="Lib\Unity.3.0.1304.1\lib\wp8\Microsoft.Practices.Unity.WindowsPhone.xml" />
+    <Content Include="Lib\Unity.Mvc4.1.4.0.0\content\Unity.Mvc4.README.txt" />
+    <Content Include="Lib\Unity.Mvc4.1.4.0.0\lib\net45\Unity.Mvc4.dll" />
+    <Content Include="Lib\WebGrease.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

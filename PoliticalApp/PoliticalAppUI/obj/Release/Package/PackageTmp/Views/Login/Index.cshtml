@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageLogin.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Index", "Login"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+    <section class="topmargin10Login section-collogin form-section">
+        <div class="section-header">
+            <h3>Login</h3>
+            <div class="clr"></div>
+        </div>
+        <div class="fancy_fields form-container">
+            <input id="txtEmail" class="form-control" placeholder="Mobile Number" name="mobileNumber" type="text">
+            <div class="col-half">
+                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+            </div>
+            <div class="col-half">
+                <label>
+                    <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+                </label>
+            </div>
+            <div class="clr"></div>
+
+
+            <div class="topmargin30">
+                <button class="marginleft20" type="submit" value="Create">Login</button>
+            </div>
+        </div>
+
+    </section>
+}

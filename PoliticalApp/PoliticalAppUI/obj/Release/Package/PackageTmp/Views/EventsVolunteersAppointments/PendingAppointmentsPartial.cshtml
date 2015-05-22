@@ -1,0 +1,48 @@
+﻿
+@model AppointmentsModel
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+
+
+<div id="tabs1-Video">
+    <div class="grid-container">
+        <ul class="gr-header">
+            <li><input type="checkbox"></li>
+            <li class="name"><i class="fa fa-user"></i> Name</li>
+            <li class="place"><i class="fa fa-file-text-o"></i> Subject</li>
+            <li class="date"><i class="fa fa-calendar"></i> Date</li>
+            <li class="play"><i class="fa fa-check"></i> Approve</li>
+        </ul>
+
+        @foreach (Appointment p in Model.appointmentList)
+        {
+            <ul class="gr-content-row">
+                <li><input type="checkbox"></li>
+                <li class="name"> @p.CitizenID</li>
+                <li class="place">@p.Message</li>
+                <li class="date">@p.AppointmentDate</li>
+                <li class="play">
+                    <button>Approve</button>
+                </li>
+            </ul>
+        }
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberVideo of @ViewBag.PendingAppointmentsTotalPages  </li>
+        </ul>       
+
+        <div class="clr"></div>
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.pendingAppointmentList, page => Url.Action("Appointments", new { Page1 = page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+
+            </ul>
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>
+

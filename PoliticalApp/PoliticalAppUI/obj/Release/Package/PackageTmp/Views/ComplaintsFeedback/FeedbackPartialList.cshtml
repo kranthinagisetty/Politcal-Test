@@ -1,0 +1,52 @@
+﻿
+@model ComplaintsFeedBackModel
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+
+
+<div id="tabs1-Video">
+    <div class="grid-container">
+
+        <div id="movie_grid">
+            <ul class=" gr-header">
+                <li><input type="checkbox"></li>
+                <li class="name"><i class="fa fa-user"></i> Name</li>
+                <li class="place"><i class="fa fa-map-marker"></i> Place</li>
+                <li class="date"><i class="fa fa-calendar"></i> Date</li>
+                <li class="play"><i class="fa fa-play-circle"></i> Play</li>
+            </ul>
+
+            @foreach (FeedBack p in Model.FeedBackList)
+            {
+            <ul class="gr-content-row">
+                <li><input type="checkbox"></li>
+                <li class="name"> @p.Description</li>
+                <li class="place">@p.Subject</li>
+                <li class="date">@p.AddedOn</li>
+                <li class="play">
+                    <i class="fa fa-play-circle"></i>
+                </li>
+            </ul>
+            }
+        </div>
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberFeedBack of @ViewBag.FeedBacktotalPages  </li>
+        </ul>
+
+        <div class="clr"></div>
+
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.FeedBackList, page => Url.Action("Index", new { page1 = page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>

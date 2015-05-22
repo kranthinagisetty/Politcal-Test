@@ -1,0 +1,48 @@
+﻿
+@model AudioVideoModel
+
+@using PoliticalAppUI.Models;
+@using Server.PoliticalAppDataEntities;
+@using PagedList.Mvc;
+@using PagedList;
+
+<div id="tabs1-Video">
+    <div class="grid-container">
+
+        <div id="movie_gridVideo">
+            <ul class="gr-header">
+                <li><input type="checkbox"></li>
+                <li class="name"><i class="fa fa-user"></i> Name</li>
+                <li class="place"><i class="fa fa-map-marker"></i> Place</li>
+                <li class="date"><i class="fa fa-calendar"></i> date</li>
+                <li class="play"><i class="fa fa-play-circle"></i> Play</li>
+            </ul>
+            @foreach (Speech p in Model.videoList)
+            {
+                <ul class="gr-content-row">
+                    <li><input type="checkbox"></li>
+                    <li class="name">@p.SpeechName</li>
+                    <li class="place">@p.Place</li>
+                    <li class="date">@p.CreatedDate</li>
+                    <li class="play">
+                        <i class="fa fa-play-circle"></i>
+                    </li>
+                </ul>
+            }
+        </div>
+
+        <ul class="gr-content-row">
+            <li> Page @ViewBag.PageNumberVideo of @ViewBag.VideoTotalPages  </li>
+        </ul>
+        <div class="clr"></div>
+
+        <div class="pager-container">
+            <ul>
+                @Html.PagedListPager(Model.videoList, page => Url.Action("Index", new { page1 = page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })
+                @*@Html.PagedListPager(Model.videoList, page => Url.Action("Index", new { page1 = page }), new PagedList.Mvc.PagedListRenderOptions { DelimiterBetweenPageNumbers = "|", MaximumPageNumbersToDisplay = 5 })*@
+            </ul>
+
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

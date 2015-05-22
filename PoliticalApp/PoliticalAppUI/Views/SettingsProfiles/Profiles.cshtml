@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Profiles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="wrapper">
+        <h2><i class="fa fa-user"></i> Profile<span class="right-sitemap">Your are here: <a href="index.html">Dashboard</a> <i class="fa fa-chevron-right"></i> <span>Profile</span> </span></h2>
+        <section class="topmargin10 section-fw profile fancy_fields">
+
+
+            <div class="col form-container ">
+                <h3>Profile Details</h3>
+                <img src="/images/profile-pic.jpg" width="110" height="110" alt="" />
+                <ul>
+                    <li class="name">David Cameron</li>
+                    <li>Consistency name</li>
+                    <li>Position: President | Service from: 2012</li>
+
+                </ul>
+                <a href="#" class="btn-sm">Change Profile Pic</a>
+                <div class="clr"></div>
+                <input type="text" name="consistencyname" placeholder="Consistency name">
+                <textarea name="summary" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's... standard dummy text ever since......"></textarea>
+            </div>
+
+            <div class="col form-container">
+                <h3>Change Password</h3>
+                <input type="password" name="currentpassword" placeholder="Current Password">
+                <input type="password" name="newpassword" placeholder="New Password">
+                <input type="password" name="confirmpassword" placeholder="Confirm Password">
+                <div class="topmargin30">
+                    <button name="save">Save</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="clr"></div>
+    </div>
+</div>

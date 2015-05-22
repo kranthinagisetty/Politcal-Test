@@ -1,0 +1,65 @@
+﻿@*@model Server.PoliticalAppDataEntities.Citizen*@
+
+@{
+    ViewBag.Title = "CitizenData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="wrapper citizendata">
+        <h2><i class="fa fa-users"></i> Citizen Data<span class="right-sitemap">Your are here: <a href="index.html">Dashboard</a> <i class="fa fa-chevron-right"></i> <span>Citizen Data</span></span></h2>
+        <section class="topmargin10 section-citizendata">
+            <div class="section-header">
+                <h3>Consistency Strength</h3>
+                <button>Edit</button>
+                <div class="clr"></div>
+            </div>
+            <div class="">
+                <div class="data-details">
+                    <img src="images/strenghtchart2.png" alt="Total strenght" />
+                </div>
+                <div class="mf-chart">
+                    <div class="left">
+                        <img src="images/femalestrenght.png" alt="Female strenght" />
+                        <h3>
+                            Women Strength
+                            <span>550050</span>
+                        </h3>
+                    </div>
+                    <div class="right">
+                        <img src="images/malestrenght.png" alt="Male strenght" />
+                        <h3>
+                            Men Strength
+                            <span>700050</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="topmargin10 bd-section">
+            <div class="section-header">
+                <h3>Birth and death</h3>
+                <button>Edit</button>
+                <div class="clr"></div>
+            </div>
+
+            <div class="birth-chart">
+                <h3>Birth <span class="">-2010 to 2014</span></h3>
+                <div class="graph">
+                    <img src="images/birthchart.jpg" width="420" height="223" alt="" />
+                </div>
+            </div>
+            <div class="death-chart">
+                <h3>Death<span class="">-2010 to 2014</span></h3>
+                <div class="graph">
+                    <img src="images/deathchart.jpg" width="420" height="223" alt="" />
+                </div>
+            </div>
+
+        </section>
+
+
+        <div class="clr"></div>
+    </div>
+</div>

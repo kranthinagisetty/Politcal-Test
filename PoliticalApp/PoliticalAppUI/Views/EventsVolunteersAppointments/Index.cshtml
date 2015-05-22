@@ -1,0 +1,113 @@
+﻿@*@model IEnumerable<Server.PoliticalAppDataEntities.Event>*@
+
+@model  EventsModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using PoliticalAppUI.Models;
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2>Events</h2>
+
+<div class="container">
+    <div class="wrapper">
+        <h2><span class="header-icon"><img src="images/icon-speech.png" width="19" height="21" alt="" /></span> Events<span class="right-sitemap">Your are here: <a href="index.html">Dashboard</a> <i class="fa fa-chevron-right"></i> <span>Events</span></span></h2>
+        <section class="topmargin10 section-col">
+
+
+            <div>
+
+                <div id="tab-container" class='tab-container'>
+                    <ul class='etabs'>
+                        <li class='tab'><a href="#tabs1-Audio">Upcoming Events</a></li>
+                    </ul>
+                    <div class="gr-action">
+                        <button>Edit</button>
+                        <button class="btn-red">Delete</button>
+                    </div>
+                    <div class="clr"></div>
+                    <div class='panel-container'>
+                        <div id="tabs1-Audio">
+                            @if (Model.eventsList != null)
+                            {
+
+                                <div class="grid-container events-gr">
+                                    <ul class="gr-header">
+                                        <li><input type="checkbox"></li>
+                                        <li class="name"><i class="fa fa-user"></i> Name</li>
+                                        <li class="place"><i class="fa fa-map-marker"></i> Place</li>
+                                        <li class="date"><i class="fa fa-calendar"></i> Date</li>
+                                    </ul>
+                                    @foreach (var item in Model.eventsList)
+                                    {
+                                    <ul class="gr-content-row">
+                                        <li><input type="checkbox"></li>
+                                        <li class="name">@item.EventName</li>
+                                        <li class="place">@item.EventLocation</li>
+                                        <li class="date">@item.EventBeginDate</li>
+                                    </ul>
+                                    }
+
+                                    <div class="clr"></div>
+                                    <div class="pager-container">
+                                        <ul>
+                                            @Html.PagedListPager(Model.eventsList, page => Url.Action("Index", new { page }))
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            }
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="topmargin10 section-col form-section">
+            <div class="section-header">
+                <h3>Add Events</h3>
+                <div class="clr"></div>
+            </div>
+
+            @using (Html.BeginForm("Index", "EventsVolunteersAppointments", FormMethod.Post, Model.events))
+            {
+
+
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+
+                <div class="fancy_fields form-container">
+                    @Html.TextBoxFor(m => m.events.EventName, new { placeholder = "EventName" })
+                    @*<input type="text" name="title" placeholder="Title">*@
+                    <div class="col-half">
+                        @Html.TextBoxFor(m => m.events.EventBeginDate, new { placeholder = "EventBeginDate" })
+                        @*<input type="text" name="date" placeholder="dd/mm/yyy">*@
+                    </div>
+                    <div class="col-half">
+                        @Html.TextBoxFor(m => m.events.EventEndDate, new { placeholder = "EventEndDate" })
+                        @*<input type="text" name="time" placeholder="00:00">*@
+                    </div>
+                    <div class="clr"></div>
+                    @Html.TextBoxFor(m => m.events.EventLocation, new { placeholder = "EventLocation" })
+                    @*<input type="text" name="place" placeholder="Place">*@
+
+                    @Html.TextBoxFor(m => m.events.Agenda, new { placeholder = "Agenda" })
+
+                    @Html.TextAreaFor(m => m.events.Description, new { placeholder = "Description" })
+
+                    <div class="topmargin30">
+                        <button class="btn-white">Clear</button>
+                        <button class="marginleft20" type="submit" value="Create">Submit</button>
+                    </div>
+                </div>
+            }
+        </section>
+        <div class="clr"></div>
+    </div>
+</div>
