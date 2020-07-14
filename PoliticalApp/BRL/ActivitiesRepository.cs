@@ -14,7 +14,7 @@ namespace PoliticalAppRepository
 {
     public class ActivitiesRepository : RepositoryBase, IActivitiesRepository
     {
-
+           // comments are added by kranthi
         public List<Server.PoliticalAppDataEntities.Event> GetEvents()
         {
             List<Server.PoliticalAppDataEntities.Event> Events = null;
